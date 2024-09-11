@@ -1,19 +1,14 @@
 # Welcome to your Expo app 👋
 
-## Notes
-
-
 ## TODO
-mpf todo - react redux or realm to store? 
-display on homepage
 
-Currency Helper file
+Enforce typescript and rules and strict mode.
+Currency Helper file - make sure all currency operations are correct and safely handled
 Sanitise user input (amount input - negatives, bad characters)
-Saving user actions to local and remote database - keep a log.
-
-
-
-
+Saving user actions to local and remote database - keeping a log of all actions.
+Remove unnecessary/boilerplate files and libraries
+Add files to .gitignore (IDE files and secrets)
+Show confirmation screen and any extra authentication needed when user invests into ISA.
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 

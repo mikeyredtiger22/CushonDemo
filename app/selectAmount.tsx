@@ -4,14 +4,25 @@ import { ThemedText } from "@/components/ThemedText";
 import { FundProps } from "@/components/Fund";
 import { useLocalSearchParams } from "expo-router";
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { addUserAction } from "../redux/userActionsSlice";
 
 export default function SelectAmount() {
   const params = useLocalSearchParams();
+  const dispatch = useDispatch();
+
   const { fundTitle } = params;
 
   const [investAmount, setInvestAmount] = useState("");
 
-  const onPressFund = (fundTitle: FundProps["title"]) => {
+  const onNextPressed = () => {
+    dispatch(
+      addUserAction({
+        actionType: "INVEST_ISA",
+        name: fundTitle,
+        amount: investAmount,
+      })
+    );
     // router.push("selectAmount", { params: { fundTitle } });
   };
 
@@ -34,7 +45,7 @@ export default function SelectAmount() {
           Press next to invest £{investAmount} into {fundTitle}.
         </ThemedText>
       )}
-      <Button title={"Next"} />
+      <Button title={"Next"} onPress={onNextPressed} />
     </View>
   );
 }
