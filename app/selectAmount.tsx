@@ -1,10 +1,10 @@
 import { StyleSheet, View, TextInput, Button } from "react-native";
-
-import { ThemedText } from "@/components/ThemedText";
-import { FundProps } from "@/components/Fund";
 import { useLocalSearchParams } from "expo-router";
 import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
+import { router } from "expo-router";
+
+import { ThemedText } from "@/components/ThemedText";
 import { addUserAction } from "../redux/userActionsSlice";
 
 export default function SelectAmount() {
@@ -23,7 +23,9 @@ export default function SelectAmount() {
         amount: investAmount,
       })
     );
-    // router.push("selectAmount", { params: { fundTitle } });
+    
+    // Navigate back to dashboard home screen
+    router.navigate({ pathname: "/" });
   };
 
   return (

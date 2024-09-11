@@ -1,8 +1,8 @@
 import { StyleSheet, View, ScrollView } from "react-native";
+import { router } from "expo-router";
 
 import { ThemedText } from "@/components/ThemedText";
 import Fund, { FundProps } from "@/components/Fund";
-import { router } from "expo-router";
 
 const funds = [
   "Vanguard S&P 500 ETF",

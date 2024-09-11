@@ -14,7 +14,7 @@ export const userActionsSlice = createSlice({
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes.
       // Also, no return statement is required from these functions.
-      state.value = [...state.value, action];
+      state.value = [...state.value, action.payload];
       // state.value = action;
 
     },

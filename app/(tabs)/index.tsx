@@ -5,6 +5,7 @@ import { HelloWave } from "@/components/HelloWave";
 import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
+import InvestmentCard from "@/components/InvestmentCard";
 
 export default function HomeScreen() {
   const userActions = useSelector((state) => state.userActions.value);
@@ -20,14 +21,11 @@ export default function HomeScreen() {
       }
     >
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
+        <ThemedText type="title">Your Investments:</ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText>{userActions?.length ?? "-"}</ThemedText>
-        <ThemedText>{JSON.stringify(userActions)}</ThemedText>
         {userActions?.map?.((userAction) => (
-          <ThemedText>{userAction.toString()}</ThemedText>
+          <InvestmentCard data={userAction} />
         ))}
       </ThemedView>
     </ParallaxScrollView>
